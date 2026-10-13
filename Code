@@ -6,9 +6,10 @@ print("Hello", name, "you are", age, "years old")
 
 health = 10
 
+
 if age >= 13:
     print("You are old enough!")
-
+    item = input("Pick an item (plank/gun/key): ").lower()
     want_to_play = input("Do you want to play? (yes/no) ").lower()
     if want_to_play == "yes":
         print("Let's Play!")
@@ -34,15 +35,36 @@ if age >= 13:
                 else:
                     ans = input("You notice a meadow and a mountain. Which do you go to (meadow/mountain)? ").lower()
                     if ans == "meadow":
-                        print("You walk into the meadow to find wolves. You lose 5 health!")
+                        if item == "gun":
+                            print("You walk into the meadow to find wolves. You use your gun shoot them, you are out of ammo!")
+
+
+                        else:
+                            print("You walk into the meadow to find wolves. You lose 5 health!")
+                            if health <= 0:
+                                print("You now have 0 health and you lost the game...")
                     else:
-                        print("You climb the mountain and find a nice place to rest. You win!")
-                        print("You finished the game with", health, "health left!")
+                        if item == "key":
+                            print("You climb the mountain and find a chest.")
+                            print("You use the key to open the chest and find bandages. You use the bandages to heal 10 health!")
+                            health += 10
+
+                            
+                        else:
+                            print("You climb the mountain and find a nice place to rest...")
+                            print("You close your eyes and fall asleep...")
+                            print("You roll off the mountain and wake up in free fall... You lose")
+        
                 if health <= 0:
                     print("You now have 0 health and you lost the game...")
                     
             elif ans == "river":
-                print("You go to the river and fall in... You lose")
+                if item == "plank":
+                    print("You go to the river and use the plank to cross safely.")
+
+
+                else:
+                    print("You go to the river and fall in... You lose")
         else:
             print("You fell off a cliff and died...")
 
@@ -51,5 +73,4 @@ if age >= 13:
 
 else: 
     print("You are not old enough to play!")
-
 
