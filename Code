@@ -1,1 +1,55 @@
+print("Welcome to the Game!")
+name = input("What is your name? ")
+age = int(input("What is your age "))
+
+print("Hello", name, "you are", age, "years old")
+
+health = 10
+
+if age >= 13:
+    print("You are old enough!")
+
+    want_to_play = input("Do you want to play? (yes/no) ").lower()
+    if want_to_play == "yes":
+        print("Let's Play!")
+
+        print("You are starting with", health, "health")
+
+        left_or_right = input("First choice... Left or Right (left/right)? ").lower()
+        if left_or_right == "left":
+            ans = input("Nice, you followed the path and reached a lake... Do you swim across or go around (across/around)? ").lower()
+            if ans == "across":
+                print("You went across the lake and reached the other side!")
+
+            else:
+                print("You went around the lake but tripped and lost 5 health")
+                health -= 5
+
+            ans= input("You notice a house and a river. Which do you go to (house/river)? ").lower()
+            if ans == "house":
+                print("You go to the house and are greeted by the owner... He doesn't like you and you lose 5 health")
+                health -= 5
+                if health <= 0:
+                    print("You now have 0 health and you lost the game...")
+                else:
+                    ans = input("You notice a meadow and a mountain. Which do you go to (meadow/mountain)? ").lower()
+                    if ans == "meadow":
+                        print("You walk into the meadow to find wolves. You lose 5 health!")
+                    else:
+                        print("You climb the mountain and find a nice place to rest. You win!")
+                        print("You finished the game with", health, "health left!")
+                if health <= 0:
+                    print("You now have 0 health and you lost the game...")
+                    
+            elif ans == "river":
+                print("You go to the river and fall in... You lose")
+        else:
+            print("You fell off a cliff and died...")
+
+    else:
+        print("See you later...")
+
+else: 
+    print("You are not old enough to play!")
+
 
