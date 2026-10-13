@@ -1,2 +1,2 @@
-# First-project
-Terra Hack club week one project. No nothing about coding.
+# First-project-Calculator
+Terra Hack Club week one project. No, nothing about coding.
