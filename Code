@@ -1,3 +1,5 @@
+import time
+
 print("Welcome to the Game!")
 name = input("What is your name? ")
 age = int(input("What is your age "))
@@ -34,6 +36,9 @@ if age >= 13:
                     print("You now have 0 health and you lost the game...")
                 else:
                     ans = input("You notice a meadow and a mountain. Which do you go to (meadow/mountain)? ").lower()
+
+                    #Medow Pathway
+
                     if ans == "meadow":
                         if item == "gun":
                             print("You walk into the meadow to find wolves. You use your gun shoot them, you are out of ammo!")
@@ -44,6 +49,9 @@ if age >= 13:
                             health -= 5
                             if health <= 0:
                                 print("You now have 0 health and you lost the game...")
+
+                    #Mountain Pathway
+
                     else:
                         if item == "key":
                             print("You climb the mountain and find a chest.")
@@ -59,9 +67,14 @@ if age >= 13:
                 if health <= 0:
                     print("You now have 0 health and you lost the game...")
                     
+                   # RIVER PATHWAY
+                   
             elif ans == "river":
                 if item == "plank":
                     ans = input("You go to the river and use the plank to cross safely. You continue on the path and find a cave. Do you enter or keep walking (enter/walk)? ").lower()
+                
+                    #CAVE PATHWAY
+                   
                     if ans == "enter":
                         ans = input("You enter the cave and see two paths. One goes deeper into the cave and the other goes up to the surface. Which do you take (deeper/up)? ").lower()
                         if ans == "deeper":
@@ -75,18 +88,30 @@ if age >= 13:
                                 ans = input("The middle torch is not lit. Do you light it or leave it (light/leave)? ").lower()
                                 if ans == "light":
                                     print("You light the torch and a pathway opens")
+                                    time.sleep(2.5)
                                     print("You follow the path")
+                                    time.sleep(2.5)
                                     print("You are greated by a white light... ")
+                                    time.sleep(2.5)
                                     print("You live")
+                                    time.sleep(2.5)
                                     print("In this lifetime atleast...")
                                 else:
                                     print("You leave the torch unlit and a pathway opens.")
+                                    time.sleep(2.5)
                                     print("You follow the path")
+                                    time.sleep(2.5)
                                     print("You are greated by a red light... ")
+                                    time.sleep(2.5)
                                     print("You are consumed by the red light...")
+                                    time.sleep(2.5)
                                     print("You do not survive this lifetime...")
+                    
+                    #VILLAGE PATHWAY
+                    
                     else:
                         print("You keep walking and find a village. You are safe and win!")
+
 
                 else:
                     print("You go to the river and fall in... You lose")
