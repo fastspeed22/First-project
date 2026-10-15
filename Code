@@ -11,12 +11,12 @@ health = 10
 
 if age >= 13:
     print("You are old enough!")
-    item = input("Pick an item (plank/gun/key): ").lower()
     want_to_play = input("Do you want to play? (yes/no) ").lower()
     if want_to_play == "yes":
         print("Let's Play!")
 
         print("You are starting with", health, "health")
+        item = input("Pick an item (plank/gun/key): ").lower()
 
         left_or_right = input("First choice... Left or Right (left/right)? ").lower()
         if left_or_right == "left":
@@ -37,7 +37,7 @@ if age >= 13:
                 else:
                     ans = input("You notice a meadow and a mountain. Which do you go to (meadow/mountain)? ").lower()
 
-                    #Medow Pathway
+                    #MEADOW PATHWAY
 
                     if ans == "meadow":
                         if item == "gun":
@@ -50,20 +50,92 @@ if age >= 13:
                             if health <= 0:
                                 print("You now have 0 health and you lost the game...")
 
-                    #Mountain Pathway
+                    #MOUNTAIN PATHWAY
 
                     else:
                         if item == "key":
                             print("You climb the mountain and find a chest.")
                             print("You use the key to open the chest and find bandages. You use the bandages to heal 10 health!")
                             health += 10
+                            ans = input("Do you want to keep climbing the mountain and rest (climb/rest)? ").lower()
+                            if ans == "climb":
+                                print("You keep hiking the mountain and you see two paths")
+                                ans = input("One path leads to a rope bridge and the other leads further down the trail. Which do you take (bridge/trail)? ").lower()
+                                if ans == "trail":
+                                    print("You keep hiking the trail and fiind a passage that seems to be covered by a massive boulder. You try to move the boulder but it is very heavy. You move it but also lose 5 health")
 
+                                    health -= 5
+                                    if health <= 0:
+                                        print("You now have 0 health and you lost the game...")
+
+                                    ans = input("The passage leads to a sight of ruins. Do you want to explore the ruins or keep walking (explore/walk)? ").lower()
+                                    if ans == "explore":
+                                        print("You explore the ruins and find a dark passage lit by torches.")
+                                        ans = input("Do you want to go down the passage or keep walking (passage/walk)? ").lower()
+                                        if ans == "passage":
+                                            ans = input("You find a room lit with torches with one torch not lit. do you light it? (yes/no) ").lower()
+                                            if ans == "yes":
+                                                print("You light the torch and a pathway opens")
+                                                time.sleep(2.5)
+                                                print("You follow the path")
+                                                time.sleep(2.5)
+                                                print("You are greated by a white light... ")
+                                                time.sleep(2.5)
+                                                print("You live")
+                                                time.sleep(2.5)
+                                                print("In this lifetime atleast...")
+                                            else:
+                                                print("You leave the torch unlit and a pathway opens.")
+                                                time.sleep(2.5)
+                                                print("You follow the path")
+                                                time.sleep(2.5)
+                                                print("You are greated by a red light... ")
+                                                time.sleep(2.5)
+                                                print("You are consumed by the red light...")
+                                                time.sleep(2.5)
+                                                print("You do not survive this lifetime...")
+                                
+                                else:
+                                    print("You cross the rope bridge and find a small abandonded wooden outpost.")
+                                    ans = input("Do you want to explore the outpost or keep walking (explore/walk)? ").lower()
+                                    if ans == "explore":
+                                        print("You explore the outpost and find a trapped doorwith a whimerpering voice begging for help. ")
+                                        ans = input("Do you want to open the door or keep walking (open/leave)? ").lower()
+                                 #Add mechanic to where if you open the trapdoor something haunts the player when they continue the journey
+                                        if ans == open:
+                                            print("you open the door and are taken aback as two pale contorted hands start to crawl out of the door. You are frozen in fear as the hands reach for you to pull you into the darkness...")
+                                            ans = input("Do you want to fight, run, or hide (fight/run/hide)? ").lower()
+                                            if ans == "fight":
+                                                print("You try to fight the hands but the get a hold of you and pull you into the darkness...")
+                                                print("You do not survive the encounter...")
+                                            elif ans == "hide":
+                                                print("You hide behind a nearby crate and you feel the presense of the hands crawling around you.")
+                                                print("The hands find you and pull you into the darkness...")
+                                                print("You do not survive the encounter...")
+                                            elif ans == "run":
+                                                print("You run away from the hands and escape the outpost.")
+                                                print("You continue on your journey but you feel a presense following you...")
+                                                ans = print("Do you want to keep walking or go back to the outpost (walking/back)? ").lower()
+                                                if ans == "back":
+                                                    print("You go back to the outpost and find the hands waiting for you. They pull you into the darkness...")
+                                                    print("You do not survive the encounter...")
+                                            elif ans == "walking":
+                                                print("")
+
+
+
+
+                            else:
+                                print("You climb the mountain and find a nice place to rest...")
+                                print("You close your eyes and fall asleep...")
+                                print("You roll off the mountain and wake up in free fall... ")
+                                print("You do not survive the fall...")
                             
                         else:
                             print("You climb the mountain and find a nice place to rest...")
                             print("You close your eyes and fall asleep...")
-                            print("You roll off the mountain and wake up in free fall... You lose")
-        
+                            print("You roll off the mountain and wake up in free fall... ")
+                            print("You do not survive the fall...")
                 if health <= 0:
                     print("You now have 0 health and you lost the game...")
                     
@@ -106,12 +178,48 @@ if age >= 13:
                                     print("You are consumed by the red light...")
                                     time.sleep(2.5)
                                     print("You do not survive this lifetime...")
+                    #CLIFF PATHWAY
+                        else:
+                            print("You return to the surface of the cave and find a massive cliff on the other side.) ")
+                            print ("The cave passage closes behind you and you are trapped.")
+                            ans = input("do you jump off the cliff or wait for help (jump/wait)? ").lower()
+                            if ans == "jump":
+                                print("You jump off the cliff")
+                                print("You do not survive the fall...")
+                            else:
+                                print("You wait for help")
+                                print("No one comes to your aid...  ")
+                                print("You do not survive")
                     
                     #VILLAGE PATHWAY
                     
                     else:
-                        print("You keep walking and find a village. You are safe and win!")
-
+                        print("You keep walking and find a village.")
+                        ans = input("Do you want to explore the village or keep walking (explore/walk)? ").lower()
+                        if ans == "explore":
+                            print("You learn that the villagers have a tradition they do every night. They invite you to join them.")
+                            ans = input("Do you want to join them or decline(join/decline)? ").lower()
+                            if ans == "join":
+                                print("You join the villagers and they initate you.")
+                                time.sleep(2)
+                                print("You are now one of them")
+                                time.sleep(2)
+                                print("You are never seen again...")
+                            else:
+                                print("You decline the invitation")
+                                time.sleep(2)
+                                print("The villagers do not like your response") 
+                                time.sleep(2)
+                                print("You are never seen again...")
+                        else:
+                            print("you keep walking to find a bumpy path that is thick in forest with occasional animal skulls")
+                            ans = input("Do you want to keep walking or turn back (keep/turn)? ").lower()
+                            if ans == "keep":
+                                print("You encounter village tribsmen who are not happy to see you")
+                                print("You do not survive the encounter...")
+                            else:
+                                print("You turn back and keep walking for what it seems like hours")
+                                print("You do not escape the forest")
 
                 else:
                     print("You go to the river and fall in... You lose")
