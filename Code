@@ -101,8 +101,7 @@ if age >= 13:
                                     if ans == "explore":
                                         print("You explore the outpost and find a trapped doorwith a whimerpering voice begging for help. ")
                                         ans = input("Do you want to open the door or keep walking (open/leave)? ").lower()
-                                 #Add mechanic to where if you open the trapdoor something haunts the player when they continue the journey
-                                        if ans == open:
+                                        if ans == "open":
                                             print("you open the door and are taken aback as two pale contorted hands start to crawl out of the door. You are frozen in fear as the hands reach for you to pull you into the darkness...")
                                             ans = input("Do you want to fight, run, or hide (fight/run/hide)? ").lower()
                                             if ans == "fight":
@@ -121,6 +120,10 @@ if age >= 13:
                                                     print("You do not survive the encounter...")
                                             elif ans == "walking":
                                                 print("")
+                                        else:
+                                            print("")
+                                    elif ans == "walk":
+                                        print("")
 
 
 
@@ -231,4 +234,3 @@ if age >= 13:
 
 else: 
     print("You are not old enough to play!")
-
