@@ -1,3 +1,2 @@
 # First-project
-Terra Hack Club week one project. No, nothing about coding. This is an interactive adventure game.
-Copy and paste the code into a .py file and then run it
+Terra Hack Club week one project. No, nothing about coding. In this text-based adventure game, players explore a mysterious forest filled with dangerous creatures, strange whispers, abandoned mines, and unsettling secrets. Players begin by choosing an item and deciding which path to take, with each decision affecting their health, survival, and possible endings. Along the way, they encounter challenges such as wolves, mysterious villagers, abandoned outposts, and a glowing red stone connected to the strange events in the forest. Players must make difficult choices, including whether to help others or prioritize their own survival, as they uncover the forest's secrets and attempt to escape alive.
